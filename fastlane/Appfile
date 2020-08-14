@@ -1,0 +1,13 @@
+app_identifier("com.supwisdon.fast") # The bundle identifier of your app
+apple_id("qxiaorankm@163.com") # Your Apple email address
+
+itc_team_id("1613001") # App Store Connect Team ID
+team_id("74UNETA6B2") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
+for_lane :test do
+  app_identifier "com.supwisdom.Jenkins"
+  apple_id "qxiaorankm@163.com"
+  team_id "74UNETA6B2"
+end

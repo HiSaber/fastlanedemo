@@ -1,0 +1,51 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new release build to the App Store"
+  lane :release do
+    build_app(scheme: "FastlaneTest")
+    upload_to_app_store
+  end
+  
+  lane :deploy do
+    # 如果项目 pod install
+    #cocoapods
+    # 不带adhoc参数，sigh会自动生成App Store证书(公司或个人帐户)
+    sigh
+    increment_build_number_in_plist(target: 'FastlaneTest')
+    increment_version_number_in_plist(
+      target: 'FastlaneTest',
+      #version_number: '1.0.1'
+      bump_type: 'patch'
+      )
+      update_info_plist(
+        plist_path:"./FastlaneTest/Info.plist",
+        block: proc do |plist|
+        urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "weixin"}
+        urlScheme[:CFBundleURLSchemes] = ["wx111111"]
+        end
+      )
+    # 指定输出目录
+    gym(
+      output_directory: './build',
+      )
+    # 上传所有信息到App Store
+    deliver(force: true)
+  end
+  
+end
