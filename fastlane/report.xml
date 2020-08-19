@@ -5,37 +5,37 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000384">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000355">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: sigh" time="2.914857">
+      <testcase classname="fastlane.lanes" name="1: sigh" time="6.32513">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: increment_build_number_in_plist" time="0.084435">
+      <testcase classname="fastlane.lanes" name="2: increment_build_number_in_plist" time="0.084668">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: increment_version_number_in_plist" time="0.030846">
+      <testcase classname="fastlane.lanes" name="3: increment_version_number_in_plist" time="0.027943">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: update_info_plist" time="0.003887">
+      <testcase classname="fastlane.lanes" name="4: update_info_plist" time="0.002745">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: gym" time="16.056913">
+      <testcase classname="fastlane.lanes" name="5: gym" time="33.246162">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: deliver" time="133.802329">
+      <testcase classname="fastlane.lanes" name="6: deliver" time="166.733901">
         
       </testcase>
     
